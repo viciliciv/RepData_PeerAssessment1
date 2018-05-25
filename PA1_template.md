@@ -50,6 +50,8 @@ avg_steps_per_interval<-activity%>%
 plot(avg_steps_per_interval$interval, avg_steps_per_interval$average_steps, type = 'l', 
      main = 'Time Series Plot', xlab = 'Interval', ylab = 'Average Steps')
 ```
+(https://github.com/viciliciv/RepData_PeerAssessment1/blob/master/figure/2-time%20series%20plot.png)
+
 2. The interval with the highest average.
 ```{r max_interval, echo=TRUE}
 max<-avg_steps_per_interval[avg_steps_per_interval$average_steps == max(avg_steps_per_interval$average_steps),]
@@ -90,6 +92,8 @@ head(activity_imputed_steps_day)
 ``` {r new_hist, echo=TRUE}
 hist(activity_imputed_steps_day$total_imputed_steps, main = 'Histogram - Total Steps per Day', xlab = 'Total Imputed Steps per Day', breaks = 50)
 ```
+(https://github.com/viciliciv/RepData_PeerAssessment1/blob/master/figure/3-histogram-imputed%20data.png)
+
   - After imputing the mean, the average total steps increased from 9354.23 to 10766 and the average total steps increased from 10395 to 10766. There is a slight difference, less than 10%, from the original mean, which shows that imputing the average doesn't skew the median/average far from the orginal data. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -115,4 +119,6 @@ four_average<-four%>%
 qplot(interval, average_steps, data=four_average, geom='line', facets=daytype~., ylab = 'Average Steps')
 
 ```
+(https://github.com/viciliciv/RepData_PeerAssessment1/blob/master/figure/3-histogram-imputed%20data.png)
+
   - The subject is more active between 1000 and 1700 on the weekends compared to the weekdays. Less activity in the weekday during this time maybe due to the subject having a desk job.
