@@ -26,6 +26,8 @@ head(one)
 ```{r pressure, echo=TRUE}
 hist(one$total_steps, main = 'Total Steps Per Day',xlab = 'Total Steps', ylab = 'Frequency', breaks = 50)
 ```
+(https://github.com/viciliciv/RepData_PeerAssessment1/blob/master/figure/1-histogram%20.png)
+
 3. Mean and median steps per day.
 ```{r mean_median, echo=TRUE}
 ##Mean and median per day
