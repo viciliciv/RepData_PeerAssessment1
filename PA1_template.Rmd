@@ -34,6 +34,9 @@ print(paste('Mean steps is', total_steps_mean))
 total_steps_median<-median(one$total_steps, na.rm = TRUE)
 print(paste('Median steps is ', total_steps_median))
 ```
+  - Mean steps is 9354.23
+  - Median steps is  10395
+
 ## What is the average daily activity pattern?
 
 1. Interval time series plot
@@ -50,6 +53,7 @@ plot(avg_steps_per_interval$interval, avg_steps_per_interval$average_steps, type
 max<-avg_steps_per_interval[avg_steps_per_interval$average_steps == max(avg_steps_per_interval$average_steps),]
 print(paste('The interval with the highest average is ',max$interval))
 ```
+  - The interval with the highest average is  835
 
 ## Imputing missing values
 
@@ -84,6 +88,7 @@ head(activity_imputed_steps_day)
 ``` {r new_hist, echo=TRUE}
 hist(activity_imputed_steps_day$total_imputed_steps, main = 'Histogram - Total Steps per Day', xlab = 'Total Imputed Steps per Day', breaks = 50)
 ```
+  - After imputing the mean, the average total steps increased from 9354.23 to 10766 and the average total steps increased from 10395 to 10766. There is a slight difference, less than 10%, from the original mean, which shows that imputing the average doesn't skew the median/average far from the orginal data. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -108,3 +113,4 @@ four_average<-four%>%
 qplot(interval, average_steps, data=four_average, geom='line', facets=daytype~., ylab = 'Average Steps')
 
 ```
+  - The subject is more active between 1000 and 1700 on the weekends compared to the weekdays. Less activity in the weekday during this time maybe due to the subject having a desk job.
